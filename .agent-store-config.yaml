@@ -1,0 +1,8 @@
+role:
+  name: SoftwareCompany
+  module: software_company
+  skills:
+  - name: WritePRD
+  - name: WriteDesign
+  - name: WriteTasks
+  - name: WriteCode

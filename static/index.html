@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      self['MonacoEnvironment'] = (function (paths) {
+        return {
+          globalAPI: false,
+          getWorkerUrl: function (moduleId, label) {
+            var result = paths[label];
+            if (/^((http:)|(https:)|(file:)|(\/\/))/.test(result)) {
+              var currentUrl = String(window.location);
+              var currentOrigin = currentUrl.substr(
+                0,
+                currentUrl.length -
+                  window.location.hash.length -
+                  window.location.search.length -
+                  window.location.pathname.length
+              );
+              if (result.substring(0, currentOrigin.length) !== currentOrigin) {
+                var js = '/*' + label + '*/importScripts("' + result + '");';
+                var blob = new Blob([js], { type: 'application/javascript' });
+                return URL.createObjectURL(blob);
+              }
+            }
+            return result;
+          },
+        };
+      })({
+        editorWorkerService: '/monacoeditorwork/editor.worker.bundle.js',
+        css: '/monacoeditorwork/css.worker.bundle.js',
+        html: '/monacoeditorwork/html.worker.bundle.js',
+        json: '/monacoeditorwork/json.worker.bundle.js',
+        typescript: '/monacoeditorwork/ts.worker.bundle.js',
+        javascript: '/monacoeditorwork/ts.worker.bundle.js',
+        less: '/monacoeditorwork/css.worker.bundle.js',
+        scss: '/monacoeditorwork/css.worker.bundle.js',
+        handlebars: '/monacoeditorwork/html.worker.bundle.js',
+        razor: '/monacoeditorwork/html.worker.bundle.js',
+      });
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="/assets/favicon-beef0aa9.ico"
+      type="image/x-icon" />
+    <title>meta-gpt</title>
+    <script
+      type="module"
+      crossorigin
+      src="/assets/index-3646acfa.js"></script>
+    <link
+      rel="modulepreload"
+      crossorigin
+      href="/assets/vue-e0bc46a9.js" />
+    <link
+      rel="modulepreload"
+      crossorigin
+      href="/assets/__commonjsHelpers__-042e6b4d.js" />
+    <link
+      rel="modulepreload"
+      crossorigin
+      href="/assets/vendor-8ca03a30.js" />
+    <link
+      rel="stylesheet"
+      href="/assets/style-9df9b14c.css" />
+  </head>
+
+  <body>
+    <div
+      id="app"
+      style="visibility: hidden"></div>
+
+    <script src="//at.alicdn.com/t/c/font_4154416_ztcldmhaba.js"></script>
+    <script>
+      setTimeout(() => {
+        const heroWrapperDiv = document.querySelector('.heroWrapper');
+        console.log(heroWrapperDiv);
+        if (heroWrapperDiv) {
+          // 使用 remove 方法删除该元素
+          heroWrapperDiv.remove();
+        }
+
+        document.querySelector(
+          '#app > div > div > div.roleListWrapper > div.title > span'
+        ).innerText = '智能体协作平台';
+
+        document.querySelector(
+          '#app > div > div > div.chatRoomWrapper > div.visionWrapper > div.emptyWrapper > div.descWrapper > div.title'
+        ).innerText = 'Chat with me';
+
+        document
+          .querySelector(
+            '#app > div > div > div.chatRoomWrapper > div.visionWrapper > div.emptyWrapper > div.descWrapper > div.desc'
+          )
+          .remove();
+
+        document
+          .querySelector(
+            '#app > div > div > div.chatRoomWrapper > div.visionWrapper > div.emptyWrapper > div.actionWrapper'
+          )
+          .remove();
+
+        document.querySelector(
+          '#app > div > div > div.chatRoomWrapper > div.inputWrapper > div > input[type=text]'
+        ).placeholder = '请输入要求';
+
+        document.querySelector(
+          '#app > div > div > div.roleListWrapper > div:nth-child(3) > div > div'
+        ).innerText = '请填写您的 OpenAI API 密钥以激活已雇用的软件团队';
+
+        document.querySelector(
+          '#app > div > div > div.roleListWrapper > div.radios > div.radioItem.active'
+        ).innerText = '普通';
+
+        document.querySelector(
+          '#app > div > div > div.roleListWrapper > div.radios > div:nth-child(2)'
+        ).innerHTML = '进阶';
+
+        document
+          .querySelector(
+            '#app > div > div > div.roleListWrapper > div:nth-child(4) > span'
+          )
+          .remove();
+
+        document.querySelector(
+          '#app > div > div > div.roleListWrapper > div:nth-child(4) > button'
+        ).innerText = '打开编辑器';
+
+        document.querySelector(
+          '#app > div > div > div.chatRoomWrapper > div.visionWrapper > div.emptyWrapper > div > div'
+        ).innerText = 'Collaborate with me';
+
+        document
+          .querySelector(
+            '#app > div > div > div.roleListWrapper > div.n-scrollbar > div.n-scrollbar-container > div > div > div:nth-child(5)'
+          )
+          .remove();
+
+        document
+          .querySelector(
+            '#app > div > div > div.roleListWrapper > div.n-scrollbar > div.n-scrollbar-container > div > div > div:nth-child(6)'
+          )
+          .remove();
+
+        document
+          .querySelector(
+            '#app > div > div > div.roleListWrapper > div.n-scrollbar > div.n-scrollbar-container > div > div > div:nth-child(5)'
+          )
+          .remove();
+
+        document.querySelectorAll('.jobStatus').forEach((ele) => {
+          ele.innerText = '已被雇用';
+        });
+
+        document.querySelector(
+          '#app > div > div > div.roleListWrapper > div.n-scrollbar > div.n-scrollbar-container > div > div > div:nth-child(1) > div.infomation > div.job > div.jobName'
+        ).innerText = '产品经理';
+
+        document.querySelector(
+          '#app > div > div > div.roleListWrapper > div.n-scrollbar > div.n-scrollbar-container > div > div > div:nth-child(2) > div.infomation > div.job > div.jobName'
+        ).innerText = '项目经理';
+
+        document.querySelector(
+          '#app > div > div > div.roleListWrapper > div.n-scrollbar > div.n-scrollbar-container > div > div > div:nth-child(3) > div.infomation > div.job > div.jobName'
+        ).innerText = '架构师';
+
+        document.querySelector(
+          '#app > div > div > div.roleListWrapper > div.n-scrollbar > div.n-scrollbar-container > div > div > div:nth-child(4) > div.infomation > div.job > div.jobName'
+        ).innerText = '工程师';
+
+        // 获取 id 为 app 的元素
+        const appDiv = document.getElementById('app');
+        // 设置元素的 visibility 属性为 hidden
+        appDiv.style.visibility = 'visible';
+      }, 1000);
+    </script>
+  </body>
+</html>
