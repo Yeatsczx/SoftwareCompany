@@ -16,6 +16,10 @@
       "dest": "app.py"
     },
     {
+      "src": "/assets/(.*)",
+      "dest": "/static/assets/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/static/$1"
     }
