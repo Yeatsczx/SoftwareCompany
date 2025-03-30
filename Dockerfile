@@ -8,11 +8,11 @@ RUN apt update &&\
     apt install -y wget
 
 
-RUN rm -rf static && \
-    wget -O dist.tar.gz https://public-frontend-1300249583.cos.ap-nanjing.myqcloud.com/test-hp-metagpt-web/dist-20240417204906.tar.gz &&\
-    tar xvzf dist.tar.gz && \
-    mv dist static && \
-    rm dist.tar.gz
+# RUN rm -rf static && \
+#     wget -O dist.tar.gz https://public-frontend-1300249583.cos.ap-nanjing.myqcloud.com/test-hp-metagpt-web/dist-20240417204906.tar.gz &&\
+#     tar xvzf dist.tar.gz && \
+#     mv dist static && \
+#     rm dist.tar.gz
 
 
 FROM nikolaik/python-nodejs:python3.9-nodejs20-slim
@@ -43,7 +43,7 @@ RUN pip install --no-cache-dir -r requirements.txt && \
     mkdir -p /app/storage && chmod 777 /app/storage
 
 COPY . .
-COPY --from=static /app/static /app/static
+# COPY --from=static /app/static /app/static
 COPY config/template.yaml static/config.yaml
 
 CMD ["python", "app.py"]

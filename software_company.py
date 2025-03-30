@@ -88,7 +88,7 @@ class SoftwareCompany(Role):
 
     def __init__(self, use_code_review=False, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        engineer = Engineer(n_borg=5, use_code_review=use_code_review)
+        engineer = Engineer(n_borg=5, use_code_review=True)
         self.company.hire([ProductManager(), Architect(), ProjectManager(), engineer])
         self._init_actions([PackProject(role=engineer)])
 
